@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from .forms import ContactForm
 from django.contrib import messages
+from .models import Teacher
 
 
 
@@ -28,4 +29,10 @@ def about(request):
     return render(request, "home/about.html")
 
 def teacher(request):
-    return render(request, "home/teacher.html")
+    teachers =Teacher.objects.all()
+    
+    context = {
+        'teachers':teachers
+    }
+    
+    return render(request, "home/teacher.html", context)

@@ -13,62 +13,26 @@
       </div>
       <div class="teacher_container layout_padding2">
         <div class="row">
+         {% for teacher in teachers  %}     
           <div class="col-md-3 col-sm-6">
             <div class="box">
               <div class="img-box">
-                <img class="" src="images/teacher-1.jpg" alt="Card image cap">
+                <img class="" src="{{teacher.image.url}}" alt="Card image cap">
               </div>
               <div class="detail-box">
                 <p>
-                  <h5>
-                    Rose Adams
+                  <h4>
+                    {{teacher.first_name}} {{teacher.last_name}}
+                  </h4>
+                   <h5>
+                    {{teacher.speciality}} <br>{{teacher.phone_teacher}} <br>{{teacher.email_teacher}}
                   </h5>
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="img-box">
-                <img class="" src="images/teacher-2.jpg" alt="Card image cap">
-              </div>
-              <div class="detail-box">
-                <p>
-                  <h5>
-                    David Mark
-                  </h5>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="img-box">
-                <img class="" src="images/teacher-3.jpg" alt="Card image cap">
-              </div>
-              <div class="detail-box">
-                <p>
-                  <h5>
-                    Leena Smith
-                  </h5>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="box">
-              <div class="img-box">
-                <img class="" src="images/teacher-4.jpg" alt="Card image cap">
-              </div>
-              <div class="detail-box">
-                <p>
-                  <h5>
-                    Jack Doe
-                  </h5>
-                </p>
-              </div>
-            </div>
-          </div>
+          {% endfor %}   
+         
         </div>
       </div>
       <div class="btn-box">
