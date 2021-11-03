@@ -11,6 +11,8 @@ from .models import Teacher
 
 def home(request):
     
+    teachers = Teacher.objects.order_by("speciality").distinct()
+    
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -21,7 +23,8 @@ def home(request):
         form = ContactForm()
         
     context = {
-        'form':form
+        'form':form, 
+        "teachers":teachers
     }
     return render(request, "home/index.html", context)
 
