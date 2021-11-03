@@ -1,6 +1,16 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <!-- slider section -->
 <div class="hero_area">
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
     <section class=" slider_section position-relative">
         <div id="Customcarousel1" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
